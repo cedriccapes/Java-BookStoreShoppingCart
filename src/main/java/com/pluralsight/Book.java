@@ -1,7 +1,7 @@
 package com.pluralsight;
 
 public class Book {
-	int id;
+	int id; //randomcomment
 	String title;
 	String author;
 	float price;
