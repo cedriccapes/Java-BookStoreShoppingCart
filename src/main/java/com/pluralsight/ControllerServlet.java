@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.inject.Inject;
 /**
- * Servlet implementation class HelloWorld xxxxv
+ * Servlet implementation class HelloWorld
  */
 
 public class ControllerServlet extends HttpServlet {
