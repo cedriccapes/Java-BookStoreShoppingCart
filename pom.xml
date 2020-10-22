@@ -117,7 +117,7 @@
     <profile>
       <id>integration</id>
       <build>
-        <!-- Integration Tests -->
+        <!-- Integration Testscc -->
         <plugins>
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
