@@ -7,6 +7,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.inject.Inject;
+
+import static java.nio.file.Files.getAttribute;
+import static jdk.internal.net.http.Http2ClientImpl.getParameter;
+
 /**
  * Servlet implementation class HelloWorld
  */
@@ -44,6 +48,8 @@ public class CartController extends HttpServlet {
 			switch(action) {
 				case "/addcart":
 					 addToCart(request, response);
+				case "/delete":
+					deleteFromCart();
            break;
         default:
            break;
@@ -85,5 +91,12 @@ public class CartController extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
+	}
+
+	private void deleteFromCart(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession laVar1 = HttpSession.getSession();
+		String laVar2 = Integer.parseInt(getParameter("index"));
+		ShoppingCart leShopCart = getAttribute("cart"); //to be casted as ShoppingCart object
+		deleteCartItem(leShopCart);
 	}
 }
