@@ -95,7 +95,7 @@ public class CartController extends HttpServlet {
 		HttpSession laVar1 = request.getSession();
 		String laVar2 = request.getParameter("index");
 		int index = Integer.parseInt(laVar2);
-		ShoppingCart leShopCart = (ShoppingCart)session.getAttribute("cart");
+		ShoppingCart leShopCart = (ShoppingCart)laVar1.getAttribute("cart");
 		leShopCart.deleteCartItem(index);
 	}
 }
